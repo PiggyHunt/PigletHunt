@@ -3,7 +3,7 @@ http_response_code(200);
 header('Content-Type: application/json');
 
 $data = [
-    'announcements' => []
+    "txid" => 987654321
 ];
 
 echo json_encode($data);

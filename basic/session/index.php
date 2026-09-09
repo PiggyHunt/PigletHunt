@@ -45,17 +45,17 @@ $data = [
     ],
     'platform' => 'STEAM',
     'user' => [
-      'name' => 'string',
-      'email' => 'string',
+      'name' => 'MiniToon',
+      'email' => 'greedycellhelp@gmail.com',
       'gamerTag' => 71880669866436610,
-      'username' => 'Astral',
-      'lastName' => 'string',
-      'firstName' => 'string',
+      'username' => 'MiniToon',
+      'lastName' => 'Kohl',
+      'firstName' => 'Couture',
       'id' => 0,
       'cid' => 'string',
-      'lang' => 'string',
+      'lang' => 'en',
       'heartbeat' => 0,
-      'password' => 'string'
+      'password' => ''
     ]
 ];
 

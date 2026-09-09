@@ -1,8 +1,6 @@
 # Piglet Hunt
 The first open-source private server for the abandoned Steam game PIGGY: Hunt
 
-### IMPORTANT NOTE: At the moment, the client will only reach 66% but I will soon fix the problem in the future. 
-
 ---
 
 ## Requirements     
@@ -54,6 +52,7 @@ Make sure you have the following installed:
   <summary>Click to view screenshots</summary>
 
   <img src="Screenshots/Screenshot1.png" alt="Screenshot 1">
+  <img src="Screenshots/Screenshot2.png" alt="Screenshot 2">
 
 </details>
 
