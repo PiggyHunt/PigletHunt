@@ -6,7 +6,18 @@ $scope = isset($_GET['scope']) ? $_GET['scope'] : '';
 
 $data = [
     'scope' => $scope,
-    'currencies' => [],
+    'currencies' => [
+        [ // Piggy Tokens
+            'id' => 'currency.soft_currency',
+            'amount' => 1000000000,
+            'properties' => []
+        ],
+        [ // Bacon
+            'id' => 'currency.hard_currency',
+            'amount' => 1000000000,
+            'properties' => []
+        ]
+    ],
     'items' => []
 ];
 
