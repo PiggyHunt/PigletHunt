@@ -1,18 +1,23 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/object/_shared.php';
+
 http_response_code(200);
 header('Content-Type: application/json');
 
 $body = file_get_contents('php://input');
 $req = json_decode($body, true);
+if (!is_array($req)) {
+    $req = array();
+}
 
-$name = (isset($req['name']) && is_string($req['name'])) ? $req['name'] : 'PIGGY-CUSTOMGAME-XXXXXX';
+$group = piggy_hardcoded_group();
+$name = isset($req['name']) && is_string($req['name']) ? $req['name'] : $group['name'];
+$tag = isset($req['tag']) && is_string($req['tag']) ? $req['tag'] : $group['tag'];
 
-$data = [
-  'group' => [
-    'id' => 0,
-    'name' => $name,
-    'tag' => null
-  ]
-];
-
-echo json_encode($data);
+echo json_encode(array(
+    'group' => array(
+        'id' => $group['id'],
+        'name' => $name,
+        'tag' => $tag
+    )
+));

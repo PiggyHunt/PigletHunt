@@ -5,11 +5,11 @@ require_once $_SERVER['DOCUMENT_ROOT'] . '/object/commerce/store_data.php';
 http_response_code(200);
 header('Content-Type: application/json');
 
-$scope = isset($_GET['stores']) ? trim($_GET['stores']) : '';
-$symbols = array_values(array_filter(array_map('trim', explode(',', $scope)), 'strlen'));
-if (count($symbols) === 0) {
-    $symbols = array_keys($STORE_DATA);
-}
+$script = isset($_SERVER['SCRIPT_NAME']) ? $_SERVER['SCRIPT_NAME'] : $_SERVER['PHP_SELF'];
+$name = basename($script);
+$name = preg_replace('/\.php$/i', '', $name);
+$name = ltrim($name, '=');
+$symbols = array_values(array_filter(array_map('trim', explode(',', $name)), 'strlen'));
 
 $stores = array();
 foreach ($symbols as $symbol) {
@@ -21,5 +21,4 @@ foreach ($symbols as $symbol) {
         'nextDeltaSeconds' => 0
     );
 }
-
 echo json_encode(array('stores' => $stores));

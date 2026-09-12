@@ -9,7 +9,6 @@ Make sure you have the following installed:
 
 - UwAmp Wamp Server [(Download)](https://www.uwamp.com/file/UwAmp.exe)
 - HxD [(Download)](https://mh-nexus.de/en/hxd/)
-- dnSpy [(Download)](https://dnspy.org/)
 - PIGGY: Hunt Client [(Download)](https://mega.nz/folder/1qt02byb#ZxDqEQh3sZLvNCPRpeY4yw)
 
 ---
@@ -40,9 +39,19 @@ Make sure you have the following installed:
 
 * In your **PIGGY: Hunt** application folder, navigate to **piggy-hunt_Data** and open **resources.assets** in a hex editor (such as HxD). Replace **api.beamable.com** with your own URL. If your URL is shorter than the original, pad the remaining space with forward slashes (`/`). If the client does not connect and your web server is not using **HTTPS**, change your URL to use **http** instead of **https**.
 
-* Open the **Managed** folder located inside **piggy-hunt_Data** and open **PubNub.dll** in **dnSpy**. Press **Ctrl + Shift + K**, set the "Search For:" to **Number/String**, and search for **pubsub.pubnub.com**. Double-click the result, then right-click the URL and select **Edit Class (C#)**. Replace it with your own URL, then click **Compile**. Finally, click **File** in the top-left corner and select **Save All** to save your changes.
-
 * Finally, you can launch the exe and you should connect to our own PIGGY: Hunt server!
+
+---
+
+## PubNub Setup
+
+* Go to https://pubnub.com and create your own account/login to your own account, create and grab your prototype credentials and add them into the /basic/notification.php file.
+
+---
+
+## Photon Setup
+
+* Go to https://dashboard.photonengine.com and create your own account/login to your own account, check email for the account confirmation, create a new app and for **Photon SDK**, choose **Realtime**, copy app id, in your **PIGGY: Hunt** application folder, navigate to **piggy-hunt_Data** and open **resource.assets** in a hex editor (such as HxD). Replace **a34b05a1-c30c-4997-93a5-5d139a87416f** with your app id.
 
 ---
 

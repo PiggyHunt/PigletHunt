@@ -1,8 +1,8 @@
-<IfModule mod_php7.c>
-    php_value auto_prepend_file "C:/UwAmp/www/_bootstrap.php"
-</IfModule>
-
 RewriteEngine On
+
+# serve announcements as .php, including read/claim sub-routes and no-dir id urls
+RewriteRule ^object/announcements/([0-9]+)/(read|claim)/?$ object/announcements/$1.php [L]
+RewriteRule ^object/announcements/([0-9]+)/?$ object/announcements/$1.php [L]
 
 # removes .php extension
 RewriteCond %{REQUEST_FILENAME} !-f

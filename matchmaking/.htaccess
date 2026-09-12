@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule ^tickets$ tickets.php [L]
+RewriteRule ^tickets/(.+)$ tickets.php [L,QSA]
+RewriteRule ^matches$ matches.php [L]
+RewriteRule ^matches/(.+)$ matches.php [L,QSA]

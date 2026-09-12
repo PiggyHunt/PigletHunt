@@ -1,24 +1,39 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'] . '/object/_shared.php';
+
 http_response_code(200);
 header('Content-Type: application/json');
 
 $scope = isset($_GET['scope']) ? $_GET['scope'] : '';
 
-$data = [
-    'scope' => $scope,
-    'currencies' => [
-        [ // Piggy Tokens
-            'id' => 'currency.soft_currency',
-            'amount' => 1000000000,
-            'properties' => []
-        ],
-        [ // Bacon
-            'id' => 'currency.hard_currency',
-            'amount' => 1000000000,
-            'properties' => []
-        ]
-    ],
-    'items' => []
-];
+$currencies = array();
+foreach (piggy_owned_currency_ids() as $cid) {
+    $currencies[] = array(
+        'id' => $cid,
+        'amount' => (int)piggy_balance($cid),
+        'properties' => array()
+    );
+}
 
-echo json_encode($data);
+$items = array();
+$k = 1;
+foreach (piggy_owned_items() as $contentId) {
+    $items[] = array(
+        'id' => $contentId,
+        'items' => array(
+            array(
+                'id' => (string)(50000 + $k),
+                'properties' => array(),
+                'createdAt' => 0,
+                'updatedAt' => 0
+            )
+        )
+    );
+    $k++;
+}
+
+echo json_encode(array(
+    'scope' => $scope,
+    'currencies' => $currencies,
+    'items' => $items
+));

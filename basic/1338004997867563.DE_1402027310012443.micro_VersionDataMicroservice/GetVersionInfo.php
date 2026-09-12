@@ -3,7 +3,7 @@ http_response_code(200);
 header('Content-Type: application/json');
 
 $data = [
-    'StoreLink' => 'https://github.com/astralsc/PigletHunt',
+    'StoreLink' => 'https://github.com/PiggyHunt/PigletHunt',
     'ForceUpdate' => false,
     'Maintenance' => false,
     'InvalidPlatform' => false,
